@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Mongo Scraper</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+
+
+    <div class="jumbotron text-center">
+        <h1>Mongo Scraper</h1>
+    </div>
+    <div>
+
+        <button id="scrapeSite" type="button" class="btn btn-primary">SCRAPE NEW ARTICLES</button>
+
+        <button style='float:right;' id="mysavedarticles" type="button" class="btn btn-primary">My articles</button>
+
+    </div>
+    <hr>
+    <div id='articleWrapper' class="container-fluid article-container">
+        <h3>Articles</h3>
+        <hr>
+        <div class="articleContainer">
+            {{#each news}}
+            <div class='individArticle'>
+                <h3> {{title}} </h3>
+                <a class='linkHb' target="_blank" href="{{link}}">{{link}}</a>
+                <p style='font-size: 16px;'>{{summary}}</p>
+                <button data-id='{{_id}}' class='savebutton'>Save</button>
+            </div>
+            <br> {{/each}}
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; David Bierma 2018</p>
+        </div>
+    </footer>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="assets/javascript/index.js"></script>
