@@ -32,8 +32,11 @@ app.use(bodyParser.json({
     type: "application/vnd.api+json"
 }));
 app.use("/", index);
+
+var MONGODB_URI = mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines");
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_cbj9t6xb:qcho6um0ihr81423sshu5rf4sa@ds229918.mlab.com:29918/heroku_cbj9t6xb");
+mongoose.connect(MONGODB_URI);
+
 mongoose.connection.on('open', () => console.log('🌎 Mongoose connected!'));
 
 
