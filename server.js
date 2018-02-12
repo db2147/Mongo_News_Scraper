@@ -46,8 +46,10 @@ mongoose.connection.on('open', () => console.log('🌎 Mongoose connected!'));
 // });
 
 
-
+// process.on('unhandledRejection', (reason, p) => {
+//     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+//     // application specific logging, throwing an error, or other logic here
+// });
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
- 

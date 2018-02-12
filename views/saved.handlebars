@@ -12,10 +12,13 @@
 
     <div class="jumbotron text-center">
         <h1>Mongo Scraper Saved articles</h1>
+        <a href='/'>
+            <button id="scrapeSite" type="button" class="btn btn-primary">All Articles</button>
+        </a>
     </div>
     <hr>
-    <div id='articleWrapper' class="container-fluid article-container">
-        <h3>Articles</h3>
+    <div id='savedArticleWrapper' class="container-fluid article-container">
+        <h3>My saved articles</h3>
         <hr>
         <div class="articleContainer">
             {{#each news}}
@@ -23,7 +26,7 @@
                 <h3> {{title}} </h3>
                 <a class='linkHb' target="_blank" href="{{link}}">{{link}}</a>
                 <p style='font-size: 16px;'>{{summary}}</p>
-                <button data-id='{{_id}}' class='savebutton'>Save</button>
+                <button data-id='{{_id}}' class='removebutton'>Remove from favorites</button>
             </div>
             <br> {{/each}}
         </div>

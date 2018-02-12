@@ -8,19 +8,38 @@ $("#scrapeSite").on("click", function () {
 
 $(".articleContainer").on("click", ".savebutton", function () {
     let id = $(this).attr("data-id");
-    console.log(id);
+
     $.ajax({
         method: "PUT",
         url: "/api/headlines/" + id,
         data: {
             saved: true
         }
-    }).then(function (data) {
-        // If the data was saved successfully
-
-        console.log(data);
-
+    }).then(function (response) {
+        console.log(response);
 
     });
 
+});
+
+$(".articleContainer").on("click", ".removebutton", function () {
+    let id = $(this).attr("data-id");
+
+    $.ajax({
+        method: "PUT",
+        url: "/api/headlines/" + id,
+        data: {
+            saved: false
+        },
+        success: function (response) {
+            console.log(response);
+
+
+        },
+        error: function (error) {
+            console.log(error);
+
+        }
+
+    })
 });

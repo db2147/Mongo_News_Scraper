@@ -23,12 +23,28 @@ body {
     font-weight: bolder;
 }
 
-.savebutton{
+.savebutton {
     color: black;
     padding: 5px 15px;
 }
 
-.individArticle{
+.individArticle {
     padding: 20px;
     border: solid 1px black;
+}
+
+#savedArticleWrapper {
+    background-color: gray;
+}
+
+.removebutton {
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 5px 15px;
+    background-color: red;
+}
+
+.removebutton:hover {
+    background-color: rgb(255, 123, 0);
 }

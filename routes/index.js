@@ -26,11 +26,11 @@ router.get("/", function (req, res) {
 router.get("/saved", function (req, res) {
 
 
-    db.News.find({
-        where: {
+    db.News.find(
+        {
             saved: true
         }
-    }).then(function (data) {
+    ).then(function (data) {
         var hbsObject = {
             news: data
         };
@@ -38,18 +38,25 @@ router.get("/saved", function (req, res) {
         res.render("saved", hbsObject);
     });
 });
+
+
 router.put("/api/headlines/:id", (req, res) => {
 
+    console.log(req.body);
 
     db.News.findOneAndUpdate({
         _id: req.params.id
     }, {
             $set: req.body
         }, {
-            saved: true
-        }).then(function (dbHeadline) {
-            res.redirect("/saved");
+            saved: req.body.saved
+        }).then(function (article) {
+
+            // res.redirect(303, '/');
+
         });
+
+
 
 
 });
